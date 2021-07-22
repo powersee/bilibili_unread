@@ -23,6 +23,30 @@ python3 bili-for-wky.py
 
 ## 香橙派
 
-请使用 bili-orangepione.py ，需要自己先安装 GPIO 库。
+请使用 [bili-orangepione.py](https://raw.githubusercontent.com/powersee/bilibili_unread/master/bili-orangepione.py) ，需要自己先安装 GPIO 库。
 
 https://github.com/duxingkei33/orangepi_PC_gpio_pyH3
+
+步骤：
+
+1
+
+```
+git clone https://github.com/duxingkei33/orangepi_PC_gpio_pyH3.git
+cd orangepi_PC_gpio_pyH3
+apt install -y python python-dev
+python setup.py install
+```
+2
+```
+wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+python get-pip.py
+pip install requests
+```
+3
+```
+orangepione:~:# python bili-for-orangepione.py 
+No message.
+```
+
+

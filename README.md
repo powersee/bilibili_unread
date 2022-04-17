@@ -1,5 +1,15 @@
 # B站未读消息提示器
-通过一个 python 脚本，查询B站未读消息，当有未读消息时，让 LED 灯亮，没有时则灯灭。
+通过一个 python 脚本，查询B站未读消息，当有未读消息时，让 LED 灯亮，没有时则灯灭。脚本都是只查询一次而已，一般都是搭配 crontab 来使用的。
+
+目前支持的设备：
+
+- esp8266
+- 玩客云
+- 香橙派
+- 赛昉 visionfive
+- 树莓派
+
+支持什么设备主要看我手头上有什么设备，大多数开发板应该都是可以的。
 
 ## ESP8266
 
@@ -49,4 +59,28 @@ orangepione:~:# python bili-for-orangepione.py
 No message.
 ```
 
+## visionfive
 
+使用的系统是 Fedora，自带的 requests 这个库，所以脚本只需下载后修改一下 gpio 即可。
+
+fedora 没有自带 crontab，需要自己安装
+
+```
+dnf install cronie cronie-anacron -y
+```
+
+装好后可能需要重启一下，之后就可以正常使用 crontab 了。
+
+目前 visionfive 也是可以使用 gpio 库的 https://pypi.org/project/gpio/
+
+```
+pip3 install gpio
+```
+
+不过我之前并不知道，所以脚本里并没有使用。
+
+## 树莓派
+
+测试的型号是树莓派 4B，下载 full 版本的固件，不需要自己手动安装库。如果是使用 Ubuntu 可能需要自己装一下 RPi.GPIO
+
+https://pypi.org/project/RPi.GPIO/
